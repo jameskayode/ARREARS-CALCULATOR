@@ -1,0 +1,107 @@
+/* ppm.css */
+
+
+
+body {
+
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.gen {
+  background-image: url('../src/assets/as2.jpg');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.res {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.pre,
+.final {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.pre h1,
+.final h1 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.pre label,
+.final label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 70px;
+  margin: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+button:hover {
+  background-color: #dfddd9;
+  color: black;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 600px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .pre,
+  .final {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .res {
+    font-size: 18px;
+  } 
+  
+  input[type="text"] {
+    padding: 6px;
+  }
+  
+  button {
+    padding: 8px 16px;
+  }
+}
