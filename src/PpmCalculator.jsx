@@ -16,6 +16,11 @@ function PpmCalculator() {
 
     let unitsValue = 0;
 
+    // Remove commas from the input values
+  const cleanedLast = last.replace(/,/g, '');
+  const cleanedSecond = second.replace(/,/g, '');
+  const cleanedThird = third.replace(/,/g, '');
+
     // Check the first 5 digits of the account number and update the units value accordingly
     if (accNum.startsWith('25114')) {
       unitsValue = 10;
@@ -37,10 +42,14 @@ function PpmCalculator() {
     else if (accNum.startsWith('0179000')) {
       unitsValue = 25;
     }
+    else if (accNum.startsWith('251124')) {
+      unitsValue = 20;
+    }
     // Calculate the PPM
-    const ppm = unitsValue * parseFloat(tariff) * 1.075;
+  const ppm = unitsValue * parseFloat(tariff) * 1.075;
 
-    const finalCal = (((parseFloat(last) + parseFloat(second) + parseFloat(third)) / 3) / 30) * parseInt(day);
+  // Parse input values with commas and calculate the final bill
+  const finalCal = (((parseFloat(cleanedLast.replace(/,/g, '')) + parseFloat(cleanedSecond.replace(/,/g, '')) + parseFloat(cleanedThird.replace(/,/g, ''))) / 3) / 30) * parseInt(day);
 
     // Update the preload and final bill values in the state
     setPreload(ppm.toFixed(2));
